@@ -1,0 +1,20 @@
+// Задача 66: Задайте значения M и N. Напишите программу, которая найдёт сумму натуральных элементов в промежутке от M до N.
+
+// M = 1; N = 15 -> 120
+// M = 4; N = 8. -> 30
+
+
+int a1 = InputInt("Введите первое число: ");
+int b1 = InputInt("Введите второе число: ");
+int InputInt(string numb)
+{
+    Console.Write(numb);
+    return int.Parse(Console.ReadLine());
+}
+int NumberSum(int a1, int b1)
+{
+    if (a1 == b1)
+        return b1;
+    return b1 + NumberSum(a1, b1 - 1);
+}
+Console.WriteLine($"Сумма элементов от {a1} до {b1} = {NumberSum(a1, b1)}");
